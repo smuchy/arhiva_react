@@ -1,0 +1,12 @@
+.home-page-container{
+    max-width: 100%;
+    padding: 0;
+    .separator-line {
+        border-left: 6px solid green;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        top: 0;
+    }
+}
