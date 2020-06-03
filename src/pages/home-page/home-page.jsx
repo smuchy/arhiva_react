@@ -1,5 +1,14 @@
-import React from "react";
-import { MDBContainer, MDBView, MDBMask, MDBRow, MDBCol } from "mdbreact";
+import React, { Fragment } from "react";
+import {
+  MDBContainer,
+  MDBView,
+  MDBMask,
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBIcon,
+} from "mdbreact";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -8,21 +17,38 @@ const HomePage = () => {
         <MDBCol md="6" className="colLeft">
           <MDBView>
             <img
-              src="https://media.istockphoto.com/photos/three-smiling-students-study-together-in-the-library-picture-id513381420?k=6&m=513381420&s=612x612&w=0&h=xTDiZ0G30VUjkndcFHqdwoLhk8-TeqX0v3B8If25jOY="
+              src="https://i7.pngguru.com/preview/881/722/568/student-education-school-stock-photography-college-students-hd.jpg"
               className="img-fluid"
               alt=""
             />
-            <MDBMask className="flex-center" overlay="blue-light"></MDBMask>
+            <MDBMask className="flex-center" overlay="blue-light">
+              <div className="buttonDiv">
+                <MDBBtn color="primary" className="button1">
+                  <MDBIcon icon="magic" className="mr-1" /> Register
+                </MDBBtn>
+                <MDBBtn color="default">
+                  Log in <MDBIcon icon="magic" className="ml-1" />
+                </MDBBtn>
+              </div>
+            </MDBMask>
+            {/* <Fragment> */}
+            {/* </Fragment> */}
           </MDBView>
         </MDBCol>
         <MDBCol md="6" className="colRight">
           <MDBView>
             <img
-              src="https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg"
+              src="https://images.unsplash.com/photo-1526512340740-9217d0159da9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
               className="img-fluid"
               alt=""
             />
-            <MDBMask className="flex-center" overlay="yellow-light"></MDBMask>
+            <MDBMask className="flex-center" overlay="yellow-light">
+              <Link to="/blanketi">
+                <MDBBtn color="primary" className="button1">
+                  <MDBIcon icon="magic" className="mr-1" /> Pogledaj Blankete
+                </MDBBtn>
+              </Link>
+            </MDBMask>
           </MDBView>
         </MDBCol>
       </MDBRow>
