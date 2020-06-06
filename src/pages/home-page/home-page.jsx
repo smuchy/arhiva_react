@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
   MDBContainer,
   MDBView,
@@ -9,8 +9,10 @@ import {
   MDBIcon,
 } from "mdbreact";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from "./login";
 
 const HomePage = () => {
+  const [toggleLogin, setToggleLogin] = useState(false);
   return (
     <MDBContainer className="home-page-container">
       <MDBRow md="12" className="test">
@@ -26,7 +28,12 @@ const HomePage = () => {
                 <MDBBtn color="primary" className="button1">
                   <MDBIcon icon="magic" className="mr-1" /> Register
                 </MDBBtn>
-                <MDBBtn color="default">
+                <MDBBtn
+                  color="default"
+                  onClick={() => {
+                    setToggleLogin(!toggleLogin);
+                  }}
+                >
                   Log in <MDBIcon icon="magic" className="ml-1" />
                 </MDBBtn>
               </div>
@@ -52,6 +59,7 @@ const HomePage = () => {
           </MDBView>
         </MDBCol>
       </MDBRow>
+      <Login toggleLogin={toggleLogin} setToggleLogin={setToggleLogin} />
     </MDBContainer>
   );
 };
