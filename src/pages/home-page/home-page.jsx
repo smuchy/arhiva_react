@@ -11,7 +11,7 @@ import {
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./login";
 
-const HomePage = () => {
+const HomePage = (props) => {
   const [toggleLogin, setToggleLogin] = useState(false);
   return (
     <MDBContainer className="home-page-container">
@@ -59,7 +59,12 @@ const HomePage = () => {
           </MDBView>
         </MDBCol>
       </MDBRow>
-      <Login toggleLogin={toggleLogin} setToggleLogin={setToggleLogin} />
+      <Login
+        toggleLogin={toggleLogin}
+        setToggleLogin={setToggleLogin}
+        admin={props.admin}
+        setAdmin={props.setAdmin}
+      />
     </MDBContainer>
   );
 };

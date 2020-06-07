@@ -17,7 +17,7 @@ import {
   MDBTabContent,
 } from "mdbreact";
 
-const Login = ({ toggleLogin, setToggleLogin }) => {
+const Login = ({ toggleLogin, setToggleLogin, admin, setAdmin }) => {
   const [password, setPassword] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -131,13 +131,13 @@ const Login = ({ toggleLogin, setToggleLogin }) => {
             />
             <MDBInput
               label="Lozinka"
-              type="text"
+              type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
             <MDBInput
               label="Potvrdi Lozinku"
-              type="text"
+              type="password"
               value={confirmPassword}
               onChange={(event) => setConfirmPassword(event.target.value)}
             />
@@ -163,14 +163,14 @@ const Login = ({ toggleLogin, setToggleLogin }) => {
             />
             <MDBInput
               label="Password"
-              type="text"
+              type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
             <MDBBtn
               color="elegant"
               onClick={() => {
-                LoginUser(inputLogin);
+                LoginUser(inputLogin, setAdmin);
               }}
             >
               Uloguj se
