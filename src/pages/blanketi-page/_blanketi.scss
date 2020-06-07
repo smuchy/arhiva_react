@@ -1,0 +1,33 @@
+.blanket-page-wrapper {
+  background-color: #b3bdb6;
+  text-align: center;
+  .image-on-top {
+    width: 100%;
+    animation: fadeIn 2s;
+  }
+
+  h1 {
+    margin-top: 2rem;
+  }
+  .collapsible-wrapper {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .trigger-for-collapsible {
+      font-size: 2rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
