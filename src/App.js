@@ -16,6 +16,7 @@ const App = () => {
           />
           <Route
             path="/blanketi"
+            exact
             component={() => <BlanketiPage admin={admin} setAdmin={setAdmin} />}
           />
         </Switch>
