@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { LoginUser } from "../API/loginUser-API";
 
 export const LoginUser = (input, setAdmin) => {
   const user = {
@@ -15,8 +14,7 @@ export const LoginUser = (input, setAdmin) => {
     })
     .then((response) => {
       localStorage.setItem("userAdmin", response.data.admin);
-      setAdmin(response.data.admin);
-      return response.data;
+      return setAdmin(response.data.admin);
     })
     .catch((error) => {
       console.log(error);
