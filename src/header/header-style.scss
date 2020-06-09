@@ -2,10 +2,9 @@
   max-width: 100%;
   padding: 0;
   .scrolling-navbar {
-    background-color: #03254c !important;
+    background-color: #03254c;
   }
   header nav {
-    box-shadow: none;
     img {
       height: 3.5rem;
     }
@@ -16,5 +15,11 @@
         }
       }
     }
+  }
+}
+.homepage-header {
+  header nav {
+    box-shadow: none;
+    background-color: transparent !important;
   }
 }

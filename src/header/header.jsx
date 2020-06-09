@@ -17,7 +17,11 @@ const Header = (props) => {
   console.log(props);
 
   return (
-    <MDBContainer className={"header-container"}>
+    <MDBContainer
+      className={
+        props.home ? "header-container homepage-header" : "header-container"
+      }
+    >
       <header>
         <MDBNavbar
           color="black"
