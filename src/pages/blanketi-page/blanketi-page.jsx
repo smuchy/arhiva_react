@@ -12,7 +12,8 @@ const BlanketiPage = (props) => {
   const CetvrtaGodina = [];
   const PetaGodina = [];
   useEffect(() => {
-    GetAllSubjects(localStorage.getItem("smer"), setAllSubjects);
+    GetAllSubjects(localStorage.getItem("smer"), props.admin, setAllSubjects);
+    console.log(allSubjects);
     allSubjects.length > 0 &&
       allSubjects.map((subject) => {
         subject.year === 1
