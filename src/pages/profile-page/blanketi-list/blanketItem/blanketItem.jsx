@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MDBContainer,
   MDBRow,
@@ -11,42 +11,47 @@ import {
   MDBPopoverBody,
   MDBPopoverHeader,
 } from "mdbreact";
-import { RemoveFromFavourites } from "../../../../API/removeFromFavourites-API";
+import PopUpModal from "./pop-up-modal";
+// import { RemoveFromFavourites } from "../../../../API/removeFromFavourites-API";
 
-const FavouriteItem = ({ favourite, token }) => {
-  console.log(favourite);
-
+const BlanketItem = ({ blanket, admin }) => {
+  const [toggleModal, setToggleModal] = useState(false);
   return (
     <MDBRow lg="12" className="component-container favourite">
       <MDBCol lg="3" className="component-image-container">
         <div className="image-container">
           <MDBView hover zoom>
-            <img src={favourite && favourite.image} />
+            <img
+              src={blanket && blanket.content}
+              onClick={() => setToggleModal(!toggleModal)}
+            />
           </MDBView>
         </div>
       </MDBCol>
       <MDBCol lg="9" className="info-container">
         <MDBRow lg="12">
           <MDBCol lg="9" className="item-info">
-            <h4>{favourite && favourite.name}</h4>
-            <p>{favourite && favourite.name}</p>
+            <h4>{blanket && blanket.title}</h4>
+            <p>{blanket && blanket.title}</p>
           </MDBCol>
           <MDBCol lg="3" className="item-price-wrapper">
-            <div className="item-price">
-              <h4>${favourite && favourite.price}</h4>
-            </div>
             <MDBBtn
               href="/profile"
               className="remove-button"
               color="elegant"
-              onClick={() => RemoveFromFavourites(token, favourite.name)}
+              // onClick={() => RemoveFromFavourites(token, favourite.name)}
             >
               <MDBIcon icon="minus" />
             </MDBBtn>
           </MDBCol>
         </MDBRow>
       </MDBCol>
+      <PopUpModal
+        toggleModal={toggleModal}
+        setToggleModal={setToggleModal}
+        image={blanket.content}
+      />
     </MDBRow>
   );
 };
-export default FavouriteItem;
+export default BlanketItem;

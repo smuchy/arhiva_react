@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { GetAllBlanketi } from "../../../API/getAllBlanketi";
-// import FavouriteItem from "./favouriteItem/favouriteItem";
+import BlanketItem from "./blanketItem/blanketItem";
 import { MDBRow } from "mdbreact";
 
 const BlanketiList = ({ admin }) => {
-  const [approvals, setBlanketi] = useState(null);
+  const [blanketi, setBlanketi] = useState(null);
   useEffect(() => {
     GetAllBlanketi(admin, setBlanketi);
   }, [admin]);
 
   return (
     <div className="favourites-wrapper">
-      <h1>Favourites</h1>
+      <h1>Neodobreni Blanketi</h1>
       <MDBRow className="favourites-row-wrapper">
-        {/* {approvals &&
-          approvals.map((approval) => {
-            return (
-              <FavouriteItem favourite={favourite.component} token={token} />
-            );
-          })} */}
+        {blanketi &&
+          blanketi.map((blanket) => {
+            return <BlanketItem blanket={blanket} admin={admin} />;
+          })}
       </MDBRow>
     </div>
   );

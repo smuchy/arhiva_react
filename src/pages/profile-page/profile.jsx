@@ -68,6 +68,7 @@ const Profile = (props) => {
               )
             )}
           </MDBRow> */}
+          <BlanketiList admin={props.admin} />
         </MDBCol>
       </MDBRow>
       <EditProfile

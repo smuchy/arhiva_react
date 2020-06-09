@@ -2,6 +2,19 @@
   &.favourite {
     max-width: 100%;
     min-width: 100%;
+    .image-container {
+      height: 10rem;
+      width: 10rem;
+      .view {
+        height: 100%;
+        width: 100%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
     .item-price-wrapper {
       display: flex;
       flex-direction: column;

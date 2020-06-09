@@ -6,6 +6,8 @@
 @import "./pages/blanketi-landing-page/blanketi-landing-page";
 @import "./pages/profile-page/profile";
 @import "./header/header-style.scss";
+@import "./pages/profile-page/blanketi-list/favourites-list";
+@import "./pages/profile-page/blanketi-list/blanketItem/favouriteItem";
 .app-container {
   max-width: 100%;
   padding: 0;
