@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import Collapsible from "react-collapsible";
+import React, { useState } from "react";
 import {
   MDBFooter,
   MDBContainer,
@@ -10,17 +9,37 @@ import {
   MDBBtn,
   MDBIcon,
   MDBLink,
+  MDBCollapse,
 } from "mdbreact";
+import CategoryComponent from "./categoryComponent/categoryComponent";
 
 const BlanketiPage = () => {
+  const PrvaGodina = [
+    "Algoritmi i programiranje",
+    "Elektronske komponente",
+    "Laboratorijski praktikum - Fizika",
+    "Osnovi elektrotehnike I",
+    "Osnovi elektrotehnike II",
+    "Uvod u računarstvo",
+  ];
+  const DrugaGodina = [
+    " Računarstvo i informatika - II godina",
+    "Upravljanje sistemima - II godina",
+    "Telekomunikacije - II godina",
+    "Elektronika i mikroprocesorska tehnika - II godina",
+    "Elektronske komponente i mikrosistemi - II godina",
+    " Elektroenergetika - II godina",
+  ];
   return (
     <>
       <div className="blanket-page-wrapper">
-        <img
-          src="https://d32xj74kbqkoqn.cloudfront.net/uploads/trail/trail_image/13/Front-End_Banner_1920x1080.jpg"
-          className="img-fluid image-on-top"
-          alt=""
-        />
+        <div className="image-wrapper">
+          <img
+            src="https://d32xj74kbqkoqn.cloudfront.net/uploads/trail/trail_image/13/Front-End_Banner_1920x1080.jpg"
+            className="img-fluid image-on-top"
+            alt=""
+          />
+        </div>
 
         <h1>Elektronski fakultet - arhiva blanketa</h1>
         <p>
@@ -28,28 +47,13 @@ const BlanketiPage = () => {
           biste videli dostupne ispite.
         </p>
         <div className="collapsible-wrapper">
-          <Collapsible className="trigger-for-collapsible" trigger="I godina">
-            <MDBLink className="blanket-page-link">
-              Algoritmi i programiranje
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronske komponente
-            </MDBLink>
-            <MDBLink className="blanket-page-link">Fizika</MDBLink>
-            <MDBLink className="blanket-page-link">
-              Laboratorijski praktikum - Fizika
-            </MDBLink>
-            <MDBLink className="blanket-page-link">Matematika I</MDBLink>
-            <MDBLink className="blanket-page-link">Matematika II</MDBLink>
-            <MDBLink className="blanket-page-link">
-              Osnovi elektrotehnike I
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Osnovi elektrotehnike II
-            </MDBLink>
-            <MDBLink className="blanket-page-link">Uvod u računarstvo</MDBLink>
-          </Collapsible>
-          <Collapsible className="trigger-for-collapsible" trigger="II godina">
+          <CategoryComponent buttonName={"I godina"} linksArray={PrvaGodina} />
+          <CategoryComponent
+            buttonName={"II godina"}
+            linksArray={DrugaGodina}
+          />
+
+          {/* <Collapsible className="trigger-for-collapsible" trigger="II godina">
             <MDBLink className="blanket-page-link">
               {" "}
               Računarstvo i informatika - II godina
@@ -130,22 +134,21 @@ const BlanketiPage = () => {
             <MDBLink className="blanket-page-link">
               Elektroenergetika - V godina
             </MDBLink>
-          </Collapsible>
-
-          {/* this is footer */}
-          <MDBFooter color="#878b91" className="font-medium pt-4 mt-4">
-            <MDBContainer
-              fluid
-              className="text-center text-md-center"
-            ></MDBContainer>
-            <div className="footer-copyright text-center py-3">
-              <MDBContainer fluid>
-                &copy; {new Date().getFullYear()} Copyright:
-                {" © Studentski inovacioni centar Elektronskog fakulteta, 2014"}
-              </MDBContainer>
-            </div>
-          </MDBFooter>
+          </Collapsible> */}
         </div>
+        {/* this is footer */}
+        <MDBFooter color="#878b91" className="font-medium pt-4 mt-4">
+          <MDBContainer
+            fluid
+            className="text-center text-md-center"
+          ></MDBContainer>
+          <div className="footer-copyright text-center py-3">
+            <MDBContainer fluid>
+              &copy; {new Date().getFullYear()} Copyright:
+              {" © Studentski inovacioni centar Elektronskog fakulteta, 2014"}
+            </MDBContainer>
+          </div>
+        </MDBFooter>
       </div>
     </>
   );
