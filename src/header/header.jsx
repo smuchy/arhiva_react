@@ -13,9 +13,11 @@ import {
   MDBIcon,
 } from "mdbreact";
 
-const Header = () => {
+const Header = (props) => {
+  console.log(props);
+
   return (
-    <MDBContainer className="header-container">
+    <MDBContainer className={"header-container"}>
       <header>
         <MDBNavbar
           color="black"
@@ -34,22 +36,8 @@ const Header = () => {
               <MDBNavItem active>
                 <MDBNavLink to="/">Home</MDBNavLink>
               </MDBNavItem>
-              {/* {props.token === null && ( */}
+
               <MDBNavItem>
-                <MDBNavLink to="register">Register</MDBNavLink>
-              </MDBNavItem>
-              {/* // )} */}
-              <MDBNavItem>
-                {/* {props.token ? ( */}
-                {/* <MDBNavLink
-                  to="#"
-                  onClick={() => {
-                    // LogoutUser(props.token, props.setToken);
-                  }}
-                >
-                  Logout
-                </MDBNavLink> */}
-                {/* ) : ( */}
                 <MDBNavLink
                   to="#"
                   // onClick={() => {
@@ -58,13 +46,15 @@ const Header = () => {
                 >
                   Login
                 </MDBNavLink>
-                {/* )} */}
               </MDBNavItem>
-              {/* {props.token && ( */}
               <MDBNavItem>
-                <MDBNavLink to="/profile">Profile</MDBNavLink>
+                <MDBNavLink to="/blanketi">Blanketi</MDBNavLink>
               </MDBNavItem>
-              {/* )} */}
+              {props.admin && (
+                <MDBNavItem>
+                  <MDBNavLink to="/blanketi">Profil</MDBNavLink>
+                </MDBNavItem>
+              )}
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
