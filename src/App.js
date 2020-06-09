@@ -11,25 +11,41 @@ const App = () => {
   const [admin, setAdmin] = useState(localStorage.getItem("userAdmin"));
   return (
     <Router>
-      <Header />
       <MDBContainer className="app-container">
         <Switch>
           <Route
             path="/"
             exact
-            component={() => <HomePage admin={admin} setAdmin={setAdmin} />}
+            component={() => (
+              <>
+                <Header admin={admin} setAdmin={setAdmin} home={true} />
+                <HomePage admin={admin} setAdmin={setAdmin} />
+              </>
+            )}
           />
           <Route
             path="/blanketi"
             exact
             component={() => (
-              <BlanketiLandingPage admin={admin} setAdmin={setAdmin} />
+              <>
+                <Header admin={admin} setAdmin={setAdmin} />
+                <BlanketiLandingPage
+                  admin={admin}
+                  setAdmin={setAdmin}
+                  home={false}
+                />
+              </>
             )}
           />
           <Route
             path="/blanketi-smer"
             exact
-            component={() => <BlanketiPage admin={admin} setAdmin={setAdmin} />}
+            component={() => (
+              <>
+                <Header admin={admin} setAdmin={setAdmin} />
+                <BlanketiPage admin={admin} setAdmin={setAdmin} home={false} />
+              </>
+            )}
           />
           <Route
             path="/profile"

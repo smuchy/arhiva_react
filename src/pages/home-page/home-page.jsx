@@ -8,7 +8,6 @@ import {
   MDBBtn,
   MDBIcon,
 } from "mdbreact";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./login";
 
 const HomePage = (props) => {
@@ -29,7 +28,7 @@ const HomePage = (props) => {
                   setToggleLogin(!toggleLogin);
                 }}
               >
-                Log in <MDBIcon className="ml-1" />
+                Login <MDBIcon className="ml-1" />
               </MDBBtn>
             </div>
           </div>

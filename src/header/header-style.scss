@@ -1,9 +1,25 @@
-@import "./login/login.scss";
 .header-container {
   max-width: 100%;
-  // margin: 0 5%;
   padding: 0;
+  .scrolling-navbar {
+    background-color: #03254c;
+  }
   header nav {
-    background-color: #000000;
+    img {
+      height: 3.5rem;
+    }
+    ul {
+      li {
+        a {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+.homepage-header {
+  header nav {
+    box-shadow: none;
+    background-color: transparent !important;
   }
 }
