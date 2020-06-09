@@ -5,6 +5,7 @@ import HomePage from "./pages/home-page/home-page";
 import BlanketiPage from "./pages/blanketi-page/blanketi-page";
 import BlanketiLandingPage from "./pages/blanketi-landing-page/blanketi-landing-page";
 import Header from "./header/header";
+import Profile from "./pages/profile-page/profile";
 
 const App = () => {
   const [admin, setAdmin] = useState(localStorage.getItem("userAdmin"));
@@ -29,6 +30,11 @@ const App = () => {
             path="/blanketi-smer"
             exact
             component={() => <BlanketiPage admin={admin} setAdmin={setAdmin} />}
+          />
+          <Route
+            path="/profile"
+            exact
+            component={() => <Profile admin={admin} setAdmin={setAdmin} />}
           />
         </Switch>
       </MDBContainer>
