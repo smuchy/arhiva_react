@@ -41,7 +41,7 @@ const HomePage = (props) => {
               View our <br /> <label>database</label>
             </h1>
             <div className="buttonDiv">
-              <MDBBtn color="info" className="button1">
+              <MDBBtn color="info" className="button1" href="/blanketi">
                 <MDBIcon className="mr-1" /> Blanketi
               </MDBBtn>
             </div>

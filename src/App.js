@@ -12,6 +12,7 @@ const App = () => {
         <Switch>
           <Route
             path="/"
+            exact
             component={() => <HomePage admin={admin} setAdmin={setAdmin} />}
           />
           <Route
