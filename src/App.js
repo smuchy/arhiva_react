@@ -37,7 +37,7 @@ const App = () => {
             )}
           />
           <Route
-            path="/blanketi/blanketi-smer"
+            path="/blanketi-smer"
             exact
             component={() => (
               <>

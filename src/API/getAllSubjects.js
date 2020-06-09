@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const GetAllSubjects = (module, setAllSubjects) => {
   return axios
-    .post("api_subject/" + module)
+    .get("api/subject/" + module)
     .then((response) => {
       return setAllSubjects(response.data);
     })

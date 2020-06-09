@@ -12,20 +12,20 @@ const BlanketiLandingPage = (props) => {
           image="https://lh3.googleusercontent.com/proxy/IXvaE-T8IdrQQ5KlikmlCjabAXRTtIox7pJVuAcefcUw9y6azW0cMO8cLyVY_JaSbE3GTEvBejvVQz7CUABlD4ckeGSkjlzQFCUlgKbKuNHJqRb90i8vYRKB8p_UzDvgo8kjHeIMKkdMLSNIa_ZRPQrKttfffHLB"
           button={{
             text: "Racunarstvo i informatika",
-            ref: "blanketi/blanketi-smer",
+            ref: "/blanketi-smer",
           }}
           href="RII"
         />
         <CardComponent
           image="https://seqred.pl/wp-content/uploads/2019/12/Electroenergetics_threats.jpg"
-          button={{ text: "Elektroenergetika", ref: "blanketi/blanketi-smer" }}
+          button={{ text: "Elektroenergetika", ref: "/blanketi-smer" }}
           href="EEG"
         />
         <CardComponent
           image="https://media-exp1.licdn.com/dms/image/C4E1BAQFpW14eZgh8rw/company-background_10000/0?e=2159024400&v=beta&t=u7Brm_rfd2MFITqxPxnk-6EFDgsmIV65yajHjMD45qI"
           button={{
             text: "Elektronske komponente i mikrosistemi",
-            ref: "blanketi/blanketi-smer",
+            ref: "/blanketi-smer",
           }}
           href="EKM"
         />
@@ -33,14 +33,14 @@ const BlanketiLandingPage = (props) => {
       <MDBRow className="card-row second-row">
         <CardComponent
           image="https://www.2dmaterialsmag.com/wp-content/uploads/2017/07/original.jpg"
-          button={{ text: "Elektronika", ref: "blanketi/blanketi-smer" }}
+          button={{ text: "Elektronika", ref: "/blanketi-smer" }}
           href="EK"
         />
         <CardComponent
           image="https://www.phocuswire.com/uploadedimages/uploads/2014/08/aerospike.jpg"
           button={{
             text: "Komunikacije i informacione tehnologije",
-            ref: "blanketi/blanketi-smer",
+            ref: "/blanketi-smer",
           }}
           href="KIT"
         />
@@ -48,7 +48,7 @@ const BlanketiLandingPage = (props) => {
           image="https://www.acg.org/sites/files/Management%20Information%20Systems_1.jpg"
           button={{
             text: "Upravljanje sistemima",
-            ref: "blanketi/blanketi-smer",
+            ref: "/blanketi-smer",
           }}
           href="US"
         />
