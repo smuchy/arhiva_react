@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/home-page/home-page";
 import BlanketiPage from "./pages/blanketi-page/blanketi-page";
 import BlanketiLandingPage from "./pages/blanketi-landing-page/blanketi-landing-page";
+import Header from "./header/header";
 
 const App = () => {
   const [admin, setAdmin] = useState(localStorage.getItem("userAdmin"));
   return (
     <Router>
+      <Header />
       <MDBContainer className="app-container">
         <Switch>
           <Route
