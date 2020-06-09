@@ -1,48 +1,38 @@
 import React, { useState, useEffect } from "react";
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBView,
-  MDBMask,
-  MDBRow,
-  MDBCol,
-  MDBBtn,
-  MDBIcon,
-  MDBLink,
-  MDBCollapse,
-} from "mdbreact";
+import { MDBFooter, MDBContainer } from "mdbreact";
 import CategoryComponent from "./categoryComponent/categoryComponent";
 import { GetAllSubjects } from "../../API/getAllSubjects";
 
 const BlanketiPage = (props) => {
   const [allSubjects, setAllSubjects] = useState("");
 
+  const PrvaGodina = [];
+  const DrugaGodina = [];
+  const TrecaGodina = [];
+  const CetvrtaGodina = [];
+  const PetaGodina = [];
   useEffect(() => {
     GetAllSubjects(localStorage.getItem("smer"), setAllSubjects);
+    allSubjects.length > 0 &&
+      allSubjects.map((subject) => {
+        subject.year === 1
+          ? PrvaGodina.push(subject)
+          : subject.year === 2
+          ? DrugaGodina.push(subject)
+          : subject.year === 3
+          ? TrecaGodina.push(subject)
+          : subject.year === 4
+          ? CetvrtaGodina.push(subject)
+          : PetaGodina.push(subject);
+      });
   }, [props.admin]);
 
-  const PrvaGodina = [
-    "Algoritmi i programiranje",
-    "Elektronske komponente",
-    "Laboratorijski praktikum - Fizika",
-    "Osnovi elektrotehnike I",
-    "Osnovi elektrotehnike II",
-    "Uvod u računarstvo",
-  ];
-  const DrugaGodina = [
-    " Računarstvo i informatika - II godina",
-    "Upravljanje sistemima - II godina",
-    "Telekomunikacije - II godina",
-    "Elektronika i mikroprocesorska tehnika - II godina",
-    "Elektronske komponente i mikrosistemi - II godina",
-    " Elektroenergetika - II godina",
-  ];
   return (
     <>
       <div className="blanket-page-wrapper">
         <div className="image-wrapper">
           <img
-            src="https://d32xj74kbqkoqn.cloudfront.net/uploads/trail/trail_image/13/Front-End_Banner_1920x1080.jpg"
+            src="https://mk0digitallearn7ttjx.kinstacdn.com/wp-content/uploads/2017/03/digital-book.jpg"
             className="img-fluid image-on-top"
             alt=""
           />
@@ -59,6 +49,15 @@ const BlanketiPage = (props) => {
             buttonName={"II godina"}
             linksArray={DrugaGodina}
           />
+          <CategoryComponent
+            buttonName={"III godina"}
+            linksArray={TrecaGodina}
+          />
+          <CategoryComponent
+            buttonName={"IV godina"}
+            linksArray={CetvrtaGodina}
+          />
+          <CategoryComponent buttonName={"V godina"} linksArray={PetaGodina} />
         </div>
         {/* this is footer */}
         <MDBFooter color="#878b91" className="font-medium pt-4 mt-4">

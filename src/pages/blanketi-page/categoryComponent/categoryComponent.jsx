@@ -4,17 +4,20 @@ import { MDBLink, MDBCollapse, MDBBtn } from "mdbreact";
 const CategoryComponent = ({ buttonName, linksArray }) => {
   const [toggleCollapsible, setToggleCollapsible] = useState(false);
   return (
-    <div>
+    <div className="category-component">
       <MDBBtn
-        color="primary"
+        color="elegant"
         onClick={() => setToggleCollapsible(!toggleCollapsible)}
         style={{ marginBottom: "1rem" }}
       >
         {buttonName}
       </MDBBtn>
-      <MDBCollapse id="basicCollapse" isOpen={toggleCollapsible}>
+      <MDBCollapse isOpen={toggleCollapsible}>
+        {/* {linksArray.lenght > 0 && */}
         {linksArray.map((link) => {
-          return <MDBLink>{link}</MDBLink>;
+          return (
+            <MDBLink>{link.subjectName ? link.subjectName : link}</MDBLink>
+          );
         })}
       </MDBCollapse>
     </div>
