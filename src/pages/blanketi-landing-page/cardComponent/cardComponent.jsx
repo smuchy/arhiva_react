@@ -9,14 +9,19 @@ import {
   MDBCol,
 } from "mdbreact";
 
-const CardExample = ({ image, button }) => {
+const CardExample = ({ image, button, href }) => {
   return (
     <MDBCol md="3" className="card-wrapper">
       <MDBCard className="card-component">
         <MDBCardImage className="img-fluid" src={image} waves />
+
         <MDBCardBody className="card-body-content">
           <div>
-            <MDBBtn color="elegant" href={button.ref}>
+            <MDBBtn
+              color="warning"
+              href={button.ref}
+              onClick={() => localStorage.setItem("smer", href)}
+            >
               {button.text}
             </MDBBtn>
           </div>

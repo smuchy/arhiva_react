@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   MDBFooter,
   MDBContainer,
@@ -12,8 +12,15 @@ import {
   MDBCollapse,
 } from "mdbreact";
 import CategoryComponent from "./categoryComponent/categoryComponent";
+import { GetAllSubjects } from "../../API/getAllSubjects";
 
-const BlanketiPage = () => {
+const BlanketiPage = (props) => {
+  const [allSubjects, setAllSubjects] = useState("");
+
+  useEffect(() => {
+    GetAllSubjects(localStorage.getItem("smer"), setAllSubjects);
+  }, [props.admin]);
+
   const PrvaGodina = [
     "Algoritmi i programiranje",
     "Elektronske komponente",
@@ -52,89 +59,6 @@ const BlanketiPage = () => {
             buttonName={"II godina"}
             linksArray={DrugaGodina}
           />
-
-          {/* <Collapsible className="trigger-for-collapsible" trigger="II godina">
-            <MDBLink className="blanket-page-link">
-              {" "}
-              Računarstvo i informatika - II godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Upravljanje sistemima - II godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Telekomunikacije - II godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronika i mikroprocesorska tehnika - II godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronske komponente i mikrosistemi - II godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektroenergetika - II godina;
-            </MDBLink>
-          </Collapsible>
-          <Collapsible className="trigger-for-collapsible" trigger="III godina">
-            <MDBLink className="blanket-page-link">
-              {" "}
-              Računarstvo i informatika - III godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Upravljanje sistemima - III godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Telekomunikacije - III godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronika i mikroprocesorska tehnika - III godina
-            </MDBLink>
-            <MDBLink>
-              {" "}
-              Elektronske komponente i mikrosistemi - III godina{" "}
-            </MDBLink>
-            <MDBLink>Elektroenergetika - III godina</MDBLink>
-          </Collapsible>
-          <Collapsible className="trigger-for-collapsible" trigger="IV godina">
-            <MDBLink className="blanket-page-link">
-              {" "}
-              Računarstvo i informatika - IV godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Upravljanje sistemima - IV godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Telekomunikacije - IV godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronika i mikroprocesorska tehnika - IV godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronske komponente i mikrosistemi - IV godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektroenergetika - IV godina
-            </MDBLink>
-          </Collapsible>
-          <Collapsible className="trigger-for-collapsible" trigger="V godina">
-            <MDBLink className="blanket-page-link">
-              Računarstvo i informatika - V godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Upravljanje sistemima - V godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Telekomunikacije - V godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronika i mikroprocesorska tehnika - V godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektronske komponente i mikrosistemi - V godina
-            </MDBLink>
-            <MDBLink className="blanket-page-link">
-              Elektroenergetika - V godina
-            </MDBLink>
-          </Collapsible> */}
         </div>
         {/* this is footer */}
         <MDBFooter color="#878b91" className="font-medium pt-4 mt-4">
