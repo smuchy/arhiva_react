@@ -1,8 +1,6 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBBtn } from "mdbreact";
 import CardComponent from "./cardComponent/cardComponent";
-import BlanketiPage from "../blanketi-page/blanketi-page";
-import { Redirect } from "react-router-dom";
 
 const BlanketiLandingPage = (props) => {
   return (

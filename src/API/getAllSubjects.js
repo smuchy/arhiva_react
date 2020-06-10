@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const GetAllSubjects = (module, setAllSubjects) => {
+export const GetAllSubjects = (module, admin, setAllSubjects) => {
   return axios
     .get("api/subject/" + module)
     .then((response) => {
