@@ -6,11 +6,16 @@ import { GetAllSubjects } from "../../API/getAllSubjects";
 const BlanketiPage = (props) => {
   const [allSubjects, setAllSubjects] = useState("");
 
-  const PrvaGodina = [];
-  const DrugaGodina = [];
-  const TrecaGodina = [];
-  const CetvrtaGodina = [];
-  const PetaGodina = [];
+  const PrvaGodina = [
+    "Fizika",
+    "Matematika 1",
+    "Uvod u racunastvo",
+    "Elektrotehnika",
+  ];
+  const DrugaGodina = [4, 5, 67, 7];
+  const TrecaGodina = [7, 8, 9, 90, 6];
+  const CetvrtaGodina = [8, 9, 6, 4, 3];
+  const PetaGodina = [5, 4, 7, 9, 9];
   useEffect(() => {
     GetAllSubjects(localStorage.getItem("smer"), props.admin, setAllSubjects);
     console.log(allSubjects);
@@ -31,19 +36,20 @@ const BlanketiPage = (props) => {
   return (
     <>
       <div className="blanket-page-wrapper">
-        <div className="image-wrapper">
-          <img
-            src="https://mk0digitallearn7ttjx.kinstacdn.com/wp-content/uploads/2017/03/digital-book.jpg"
-            className="img-fluid image-on-top"
-            alt=""
-          />
-        </div>
+        <h1>
+          {localStorage.getItem("smer") === "RII"
+            ? "Racunarstvo i informatika"
+            : localStorage.getItem("smer") === "EEG"
+            ? "Elektroenergetika"
+            : localStorage.getItem("smer") === "EKM"
+            ? "Elektronske komponente i mikrosistemi"
+            : localStorage.getItem("smer") === "EK"
+            ? "Elektronika"
+            : localStorage.getItem("smer") === "KIT"
+            ? "Komunikacije i informacione tehnologije"
+            : "Upravljanje sistemima"}
+        </h1>
 
-        <h1>Elektronski fakultet - arhiva blanketa</h1>
-        <p>
-          Elektronski fakultet - arhiva blanketa Izaberite godinu i smer da
-          biste videli dostupne ispite.
-        </p>
         <div className="collapsible-wrapper">
           <CategoryComponent buttonName={"I godina"} linksArray={PrvaGodina} />
           <CategoryComponent

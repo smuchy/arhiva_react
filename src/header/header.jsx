@@ -14,8 +14,6 @@ import {
 } from "mdbreact";
 
 const Header = (props) => {
-  console.log(props);
-
   return (
     <MDBContainer
       className={
@@ -54,6 +52,11 @@ const Header = (props) => {
               <MDBNavItem>
                 <MDBNavLink to="/blanketi">Blanketi</MDBNavLink>
               </MDBNavItem>
+              {localStorage.getItem("userAdmin") !== null && (
+                <MDBNavItem>
+                  <MDBNavLink>Dodaj blanket</MDBNavLink>
+                </MDBNavItem>
+              )}
               {props.admin && (
                 <MDBNavItem>
                   <MDBNavLink to="/blanketi">Profil</MDBNavLink>

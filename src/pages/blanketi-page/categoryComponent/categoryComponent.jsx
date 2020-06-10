@@ -6,7 +6,7 @@ const CategoryComponent = ({ buttonName, linksArray }) => {
   return (
     <div className="category-component">
       <MDBBtn
-        color="elegant"
+        color="warning"
         onClick={() => setToggleCollapsible(!toggleCollapsible)}
         style={{ marginBottom: "1rem" }}
       >
