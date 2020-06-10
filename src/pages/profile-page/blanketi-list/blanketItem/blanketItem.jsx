@@ -12,7 +12,8 @@ import {
   MDBPopoverHeader,
 } from "mdbreact";
 import PopUpModal from "./pop-up-modal";
-// import { RemoveFromFavourites } from "../../../../API/removeFromFavourites-API";
+import { RemoveBlanket } from "../../../../API/removeBlanket";
+import { ApproveBlanket } from "../../../../API/approveBlanket";
 
 const BlanketItem = ({ blanket, admin }) => {
   const [toggleModal, setToggleModal] = useState(false);
@@ -32,14 +33,22 @@ const BlanketItem = ({ blanket, admin }) => {
         <MDBRow lg="12">
           <MDBCol lg="9" className="item-info">
             <h4>{blanket && blanket.title}</h4>
-            <p>{blanket && blanket.title}</p>
+            {/* <p>{blanket && blanket.title}</p> */}
           </MDBCol>
           <MDBCol lg="3" className="item-price-wrapper">
             <MDBBtn
               href="/profile"
+              className="approve-button"
+              color="elegant"
+              onClick={() => ApproveBlanket(admin, blanket)}
+            >
+              <MDBIcon icon="check" />
+            </MDBBtn>
+            <MDBBtn
+              href="/profile"
               className="remove-button"
               color="elegant"
-              // onClick={() => RemoveFromFavourites(token, favourite.name)}
+              onClick={() => RemoveBlanket(admin, blanket.id)}
             >
               <MDBIcon icon="minus" />
             </MDBBtn>
@@ -50,6 +59,7 @@ const BlanketItem = ({ blanket, admin }) => {
         toggleModal={toggleModal}
         setToggleModal={setToggleModal}
         image={blanket.content}
+        title={blanket.title}
       />
     </MDBRow>
   );

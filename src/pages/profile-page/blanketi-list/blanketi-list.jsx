@@ -15,7 +15,8 @@ const BlanketiList = ({ admin }) => {
       <MDBRow className="favourites-row-wrapper">
         {blanketi &&
           blanketi.map((blanket) => {
-            return <BlanketItem blanket={blanket} admin={admin} />;
+            if (blanket.status === false)
+              return <BlanketItem blanket={blanket} admin={admin} />;
           })}
       </MDBRow>
     </div>

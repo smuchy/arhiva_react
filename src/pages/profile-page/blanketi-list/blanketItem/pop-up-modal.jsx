@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBModal, MDBModalBody, MDBModalHeader } from "mdbreact";
 
-const PopUpModal = ({ toggleModal, setToggleModal, image }) => {
+const PopUpModal = ({ toggleModal, setToggleModal, image, title }) => {
   return (
     <MDBModal
       isOpen={toggleModal}
@@ -12,7 +12,9 @@ const PopUpModal = ({ toggleModal, setToggleModal, image }) => {
       <MDBModalHeader
         isOpen={toggleModal}
         toggle={() => setToggleModal(!toggleModal)}
-      ></MDBModalHeader>
+      >
+        {title}
+      </MDBModalHeader>
       <MDBModalBody>
         <img src={image} />
       </MDBModalBody>

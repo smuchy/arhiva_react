@@ -14,9 +14,14 @@ import {
   MDBCardText,
   MDBInput,
 } from "mdbreact";
-// import { EditUserInfo } from "../../../API/editUserInfo-API";
+import { EditUserInfo } from "../../../API/editUserInfo";
 
-const EditProfile = ({ toggleEditModal, setToggleEditModal, token }) => {
+const EditProfile = ({
+  toggleEditModal,
+  setToggleEditModal,
+  userInfo,
+  admin,
+}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,6 +31,7 @@ const EditProfile = ({ toggleEditModal, setToggleEditModal, token }) => {
     email: email,
   };
 
+  console.log(userInfo);
   return (
     <MDBModal
       isOpen={toggleEditModal}
@@ -63,11 +69,12 @@ const EditProfile = ({ toggleEditModal, setToggleEditModal, token }) => {
             />
           </MDBCardText>
           <MDBBtn
+            href="/profile"
             color="elegant"
-            // onClick={() => {
-            //   EditUserInfo(input, token);
-            //   setToggleEditModal(!toggleEditModal);
-            // }}
+            onClick={() => {
+              EditUserInfo(input, userInfo, admin);
+              setToggleEditModal(!toggleEditModal);
+            }}
           >
             Save
           </MDBBtn>
