@@ -6,19 +6,16 @@ import { GetAllSubjects } from "../../API/getAllSubjects";
 const BlanketiPage = (props) => {
   const [allSubjects, setAllSubjects] = useState("");
 
-  const PrvaGodina = [
-    "Fizika",
-    "Matematika 1",
-    "Uvod u racunastvo",
-    "Elektrotehnika",
-  ];
-  const DrugaGodina = [4, 5, 67, 7];
-  const TrecaGodina = [7, 8, 9, 90, 6];
-  const CetvrtaGodina = [8, 9, 6, 4, 3];
-  const PetaGodina = [5, 4, 7, 9, 9];
+  const PrvaGodina = [];
+  const DrugaGodina = [];
+  const TrecaGodina = [];
+  const CetvrtaGodina = [];
+  const PetaGodina = [];
   useEffect(() => {
     GetAllSubjects(localStorage.getItem("smer"), props.admin, setAllSubjects);
-    console.log(allSubjects);
+  }, [props.admin]);
+
+  useEffect(() => {
     allSubjects.length > 0 &&
       allSubjects.map((subject) => {
         subject.year === 1
@@ -31,7 +28,7 @@ const BlanketiPage = (props) => {
           ? CetvrtaGodina.push(subject)
           : PetaGodina.push(subject);
       });
-  }, [props.admin]);
+  }, [allSubjects]);
 
   return (
     <>
@@ -39,19 +36,19 @@ const BlanketiPage = (props) => {
         <h1>
           {localStorage.getItem("smer") === "RII"
             ? "Racunarstvo i informatika"
-            : localStorage.getItem("smer") === "EEG"
+            : localStorage.getItem("smer") === "EKE"
             ? "Elektroenergetika"
-            : localStorage.getItem("smer") === "EKM"
+            : localStorage.getItem("smer") === "EiMT"
             ? "Elektronske komponente i mikrosistemi"
-            : localStorage.getItem("smer") === "EK"
+            : localStorage.getItem("smer") === "EKM"
             ? "Elektronika"
-            : localStorage.getItem("smer") === "KIT"
+            : localStorage.getItem("smer") === "TEL"
             ? "Komunikacije i informacione tehnologije"
             : "Upravljanje sistemima"}
         </h1>
 
         <div className="collapsible-wrapper">
-          <CategoryComponent buttonName={"I godina"} linksArray={PrvaGodina} />
+          {/* <CategoryComponent buttonName={"I godina"} linksArray={PrvaGodina} /> */}
           <CategoryComponent
             buttonName={"II godina"}
             linksArray={DrugaGodina}

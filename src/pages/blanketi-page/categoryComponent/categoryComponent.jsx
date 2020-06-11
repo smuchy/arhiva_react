@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { MDBLink, MDBCollapse, MDBBtn } from "mdbreact";
+import { SubjectPage } from "../subject-page/subject-page";
 
 const CategoryComponent = ({ buttonName, linksArray }) => {
   const [toggleCollapsible, setToggleCollapsible] = useState(false);
+  const sheetsArray = [];
   return (
     <div className="category-component">
       <MDBBtn
@@ -13,10 +15,23 @@ const CategoryComponent = ({ buttonName, linksArray }) => {
         {buttonName}
       </MDBBtn>
       <MDBCollapse isOpen={toggleCollapsible}>
-        {/* {linksArray.lenght > 0 && */}
         {linksArray.map((link) => {
+          link.sheets.map((sheet) => {
+            sheetsArray.push(sheet);
+          });
           return (
-            <MDBLink>{link.subjectName ? link.subjectName : link}</MDBLink>
+            <MDBLink
+              to="/subject"
+              onClick={() => {
+                localStorage.setItem("subject", link.subjectName);
+                localStorage.setItem(
+                  "subjectSheets",
+                  JSON.stringify(sheetsArray)
+                );
+              }}
+            >
+              {link.subjectName ? link.subjectName : link}
+            </MDBLink>
           );
         })}
       </MDBCollapse>

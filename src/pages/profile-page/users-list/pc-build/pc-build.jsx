@@ -15,8 +15,6 @@ import {
 import { RemovePCBuild } from "../../../../API/removePCBuild-API";
 
 const PCBuild = ({ build, token }) => {
-  console.log(build);
-
   return (
     <div className="pc-build-component">
       <MDBCard style={{ width: "27rem" }} className="build-card">

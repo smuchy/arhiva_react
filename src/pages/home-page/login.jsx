@@ -169,9 +169,7 @@ const Login = ({ toggleLogin, setToggleLogin, admin, setAdmin }) => {
             />
             <MDBBtn
               color="elegant"
-              onClick={() => {
-                LoginUser(inputLogin, setAdmin);
-              }}
+              onClick={() => LoginUser(inputLogin, setAdmin)}
             >
               Uloguj se
             </MDBBtn>

@@ -13,6 +13,7 @@ export const LoginUser = (input, setAdmin) => {
       },
     })
     .then((response) => {
+      console.log(response.data);
       localStorage.setItem("userAdmin", response.data.admin);
       return setAdmin(response.data.admin);
     })

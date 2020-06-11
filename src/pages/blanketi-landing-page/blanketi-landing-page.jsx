@@ -17,7 +17,7 @@ const BlanketiLandingPage = (props) => {
         <CardComponent
           image="https://seqred.pl/wp-content/uploads/2019/12/Electroenergetics_threats.jpg"
           button={{ text: "Elektroenergetika", ref: "/blanketi-smer" }}
-          href="EEG"
+          href="EKE"
         />
         <CardComponent
           image="https://media-exp1.licdn.com/dms/image/C4E1BAQFpW14eZgh8rw/company-background_10000/0?e=2159024400&v=beta&t=u7Brm_rfd2MFITqxPxnk-6EFDgsmIV65yajHjMD45qI"
@@ -25,14 +25,14 @@ const BlanketiLandingPage = (props) => {
             text: "Elektronske komponente i mikrosistemi",
             ref: "/blanketi-smer",
           }}
-          href="EKM"
+          href="EiMT"
         />
       </MDBRow>
       <MDBRow className="card-row second-row">
         <CardComponent
           image="https://www.2dmaterialsmag.com/wp-content/uploads/2017/07/original.jpg"
           button={{ text: "Elektronika", ref: "/blanketi-smer" }}
-          href="EK"
+          href="EKM"
         />
         <CardComponent
           image="https://www.phocuswire.com/uploadedimages/uploads/2014/08/aerospike.jpg"
@@ -40,7 +40,7 @@ const BlanketiLandingPage = (props) => {
             text: "Komunikacije i informacione tehnologije",
             ref: "/blanketi-smer",
           }}
-          href="KIT"
+          href="TEL"
         />
         <CardComponent
           image="https://www.acg.org/sites/files/Management%20Information%20Systems_1.jpg"

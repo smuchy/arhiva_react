@@ -8,6 +8,8 @@
 @import "./header/header-style.scss";
 @import "./pages/profile-page/blanketi-list/favourites-list";
 @import "./pages/profile-page/blanketi-list/blanketItem/favouriteItem";
+@import "./pages/blanketi-page/subject-page/subject-page";
+@import "./header/add-sheet/add-sheet";
 .app-container {
   max-width: 100%;
   padding: 0;

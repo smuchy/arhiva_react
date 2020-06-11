@@ -1,0 +1,33 @@
+.subject-page-container {
+  margin-top: 10rem;
+  h1 {
+    font-weight: 700;
+    color: #03254c;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .blanketi-wrapper {
+    overflow: scroll;
+    height: 75vh;
+    .component-container {
+      background-color: #ffff0055;
+      border-radius: 10px 10px 10px 10px;
+      margin: 2.5rem 0;
+      height: 12rem;
+      .image-container {
+        height: 10rem;
+        width: 10rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      .info-container {
+        .item-price-wrapper {
+          display: none;
+        }
+      }
+    }
+  }
+  .blanketi-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -31,7 +31,6 @@ const EditProfile = ({
     email: email,
   };
 
-  console.log(userInfo);
   return (
     <MDBModal
       isOpen={toggleEditModal}

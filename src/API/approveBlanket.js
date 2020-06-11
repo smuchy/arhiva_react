@@ -5,6 +5,7 @@ export const ApproveBlanket = (admin, blanket) => {
     Content: blanket.content,
     Title: blanket.title,
     Status: true,
+    SubjectName: blanket.subjectName,
   };
   return axios
     .put("api/sheets/" + blanket.id, JSON.stringify(updateData), {
